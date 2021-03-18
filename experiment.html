@@ -4,15 +4,16 @@
         <title>My page</title>   
         <link rel="stylesheet" href="style.css">
         <script src="script.js" async></script>
+        <script type="module" src="game_script.js" async></script>
     </head>
     <body>
         <header>
             <div class= "header">
                 <h1>Portfolio in construction</h1>
                 <nav class="header" id="nav-top">
-                    <a class= "active" href="index.html">Home</a>
+                    <a href="index.html">Home</a>
                     <a href="proyects.html">Proyects</a>
-                    <a href="experiment.html">Fun Stuff</a>
+                    <a class= "active" href="experiment.html">Fun Stuff</a>
                     <a href="presents.html" title="Click here darling">Presents</a>
                     <a href="about.html" title="Get to know me">About</a>
                     <a href="contact.html">Contact me</a>
@@ -23,7 +24,7 @@
         </header>
         <section>
             <div class="content">
-                <p>Welcome to my site</p>
+                <canvas id="gameScreen" width="800" height="600"></canvas>
             </div>
         </section>
     </body>
