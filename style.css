@@ -58,6 +58,10 @@ body{
     cursor: pointer;
     border-radius: 10px; 
 }
+
+#img_ball {
+    display: none;
+}
 #gameScreen {
     border: 1px solid black
 }
