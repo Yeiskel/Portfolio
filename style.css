@@ -62,6 +62,9 @@ body{
 #img_ball {
     display: none;
 }
+#img_brick {
+    display: none;
+}
 #gameScreen {
     border: 1px solid black
 }
