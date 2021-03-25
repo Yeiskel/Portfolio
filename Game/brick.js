@@ -8,9 +8,11 @@ export default class Brick {
         this.height = 50;
         this.game = game;
         this.markedForDeletion = false
+        this.brick_break = document.getElementById("brick_sound");
     }
     update(){
         if (detectCollision(this.game.ball, this)) {
+            this.brick_break.play();
             this.game.ball.speed.y = -this.game.ball.speed.y;
             this.markedForDeletion = true;
         }
