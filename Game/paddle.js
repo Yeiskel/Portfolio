@@ -26,7 +26,7 @@
     }
 
     draw(context) {
-        context.fillStyle = "cyan";
+        context.fillStyle = "rgb(0,109,204)";
         context.fillRect(this.position.x, this.position.y, this.width, this.height);
     }
 
