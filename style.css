@@ -9,7 +9,6 @@ body{
     background-color:blueviolet;
     color: rgb(0, 174, 255);
     margin: auto;
-    padding: 5px 5px;    
     border-radius: 20px;
     text-align: center;
 
@@ -38,6 +37,7 @@ body{
     background-color:rgb(14, 238, 163);
     color:blue;
 }
+
 /* Remember to add dark mode styles */
 
 .content {
