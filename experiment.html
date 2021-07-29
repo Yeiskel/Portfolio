@@ -1,48 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title>My page</title>   
-        <link rel="stylesheet" href="style.css">
-        <script src="script.js" async></script>
-        <script type="module" src="Game/game_script.js" async></script>
-    </head>
-    <body>
-        <header>
-            <div class= "header">
-                <h1>Portfolio in construction</h1>
-                <nav class="header" id="nav-top">
-                    <a href="index.html">Home</a>
-                    <a href="proyects.html">Proyects</a>
-                    <a class= "active" href="experiment.html">Fun Stuff</a>
-                    <a href="presents.html" title="Click here darling">Presents</a>
-                    <a href="about.html" title="Get to know me">About</a>
-                    <a href="contact.html">Contact me</a>
-                    <button  id="button_dark" onclick="dark_mode()"><img src= "Images/moon.png"></button >
-                    <button  id="button_light" onclick="light_mode()"><img src= "Images/sun.png"></button >
-               </nav>
-            </div>
-        </header>
-        <section>
-            <div class="content">
-                <audio id = "defeat_sound">
-                    <source src= "Game/Dark Souls ' You Died ' Sound Effect.ogg" type="audio/ogg">
-                </audio>
-                <audio id= "boop_sound">
-                    <source src= "Game/Video Game Beep - Sound Effect.ogg" type="audio/ogg">
-                </audio>
-                <audio id= "brick_sound">
-                    <source src= "Game/Brick Break Sound Effect.ogg" type="audio/ogg">
-                </audio>
-                <audio id= "victory_sound">
-                    <source src= "Game/Final Fantasy Victory Sound Effects.ogg" type="audio/ogg">
-                </audio>
-                <audio id= "dying_sound">
-                    <source src= "Game/Bruh Sound Effect.ogg" type="audio/ogg">
-                </audio>
-                <img id="img_ball" src="Images/pokeball-mini.png">
-                <img id="img_brick" src="Images/brick.png">
-                <canvas id="gameScreen" width="800" height="600"></canvas>
-            </div>
-        </section>
-    </body>
+	<head>
+		<title>My page</title>
+		<link rel="stylesheet" href="style.css" />
+		<script src="script.js" async></script>
+		<script type="module" src="Game/game_script.js" async></script>
+	</head>
+	<body>
+		<header>
+			<div class="header">
+				<h1>Portfolio in construction</h1>
+				<nav class="header" id="nav-top">
+					<a href="index.html">Home</a>
+					<a href="proyects.html">Proyects</a>
+					<a class="active" href="experiment.html">Fun Stuff</a>
+					<a href="presents.html" title="Click here darling"
+						>Presents</a
+					>
+					<a href="about.html" title="Get to know me">About</a>
+					<a href="contact.html">Contact me</a>
+					<button id="button_dark" onclick="dark_mode()">
+						<img src="Images/moon.png" />
+					</button>
+					<button id="button_light" onclick="light_mode()">
+						<img src="Images/sun.png" />
+					</button>
+				</nav>
+			</div>
+		</header>
+		<section>
+			<div class="content">
+				<audio id="defeat_sound">
+					<source
+						src="Game/Dark Souls ' You Died ' Sound Effect.ogg"
+						type="audio/ogg"
+					/>
+				</audio>
+				<audio id="boop_sound">
+					<source
+						src="Game/Video Game Beep - Sound Effect.ogg"
+						type="audio/ogg"
+					/>
+				</audio>
+				<audio id="brick_sound">
+					<source
+						src="Game/Brick Break Sound Effect.ogg"
+						type="audio/ogg"
+					/>
+				</audio>
+				<audio id="victory_sound">
+					<source
+						src="Game/Final Fantasy Victory Sound Effects.ogg"
+						type="audio/ogg"
+					/>
+				</audio>
+				<audio id="dying_sound">
+					<source src="Game/Bruh Sound Effect.ogg" type="audio/ogg" />
+				</audio>
+				<img id="img_ball" src="Images/pokeball-mini.png" />
+				<img id="img_brick" src="Images/brick.png" />
+				<canvas id="gameScreen" width="800" height="600"></canvas>
+			</div>
+		</section>
+	</body>
 </html>
