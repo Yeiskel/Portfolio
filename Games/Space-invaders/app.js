@@ -61,10 +61,10 @@ document.addEventListener("DOMContentLoaded", () => {
 	function inputHandler(event) {
 		switch (event.code) {
 			case "ArrowLeft":
-				if (playerLeft > 0) moveLeft();
+				if (playerLeft > 10) moveLeft();
 				break;
 			case "ArrowRight":
-				if (playerLeft <= windowWidth - playerWidth) moveRight();
+				if (playerLeft < windowWidth - playerWidth - 10) moveRight();
 				break;
 			case "Space":
 				shootProjectile();
@@ -89,7 +89,7 @@ document.addEventListener("DOMContentLoaded", () => {
 		// if (invaderCounter < 5) setTimeout(generateInvader, 4000);
 
 		function moveInvaderLeft() {
-			if (randomPositionX >= 0) {
+			if (randomPositionX > 0) {
 				randomPositionX -= invaderSpeed;
 				invader.style.left = randomPositionX + "px";
 				// console.log(randomPositionX);

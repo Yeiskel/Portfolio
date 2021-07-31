@@ -54,5 +54,6 @@
 	height: 90px;
 	position: absolute;
 	transition: top 0.2s;
+	transition-timing-function: linear;
 	z-index: +2;
 }
