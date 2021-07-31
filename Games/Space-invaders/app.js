@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
 	function shootProjectile() {
 		isShooting = true;
 		let projectilePositionY = 395;
-		let projectilePositionX = playerLeft + 2.3;
+		let projectilePositionX = playerLeft + 17.5;
 		const projectile = document.createElement("div");
 		projectile.classList.add("projectile");
 		gameDisplay.appendChild(projectile);
