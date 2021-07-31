@@ -2,53 +2,69 @@ document.addEventListener("DOMContentLoaded", () => {
 	const player = document.querySelector(".player");
 	const gameDisplay = document.querySelector(".game-container");
 	const space = document.querySelector(".space");
+	let windowWidth = gameDisplay.clientWidth;
 
-	let playerLeft = 46;
+	let playerLeft = player.offsetLeft;
+	let playerWidth = 50;
 	let projectileSpeed = 5;
+	let projectileWidth = 15;
 	let isShooting = false;
-	let sideSpeed = 2;
+	let sideSpeed = 10;
 	let verticalSpeed = 90;
-	let invaderSpeed = 0.5;
+	let invaderSpeed = 3.5;
+	let invaderWitdh = 90;
 	let invaderCounter = 0;
 	let reachedLeftSide = false;
 	let isGameOver = false;
 
 	function moveLeft() {
 		playerLeft -= sideSpeed;
-		player.style.left = playerLeft + "%";
+		player.style.left = playerLeft + "px";
 	}
 	function moveRight() {
 		playerLeft += sideSpeed;
-		player.style.left = playerLeft + "%";
+		player.style.left = playerLeft + "px";
 	}
 
 	function shootProjectile() {
 		isShooting = true;
-		let projectilePosition = 395;
+		let projectilePositionY = 395;
+		let projectilePositionX = playerLeft + 2.3;
 		const projectile = document.createElement("div");
 		projectile.classList.add("projectile");
 		gameDisplay.appendChild(projectile);
 		//Center of the player
-		projectile.style.left = playerLeft + 2.3 + "%";
+		projectile.style.left = projectilePositionX + "px";
 
 		function moveProjectile() {
-			projectilePosition -= projectileSpeed;
-			projectile.style.top = projectilePosition + "px";
+			projectilePositionY -= projectileSpeed;
+			projectile.style.top = projectilePositionY + "px";
+			//Algoritmo de colision
+			if (
+				projectilePositionY < randomPositionY + invaderWitdh &&
+				projectilePositionY + 30 > randomPositionY &&
+				projectilePositionX < randomPositionX + invaderWitdh &&
+				projectilePositionX + projectileWidth > randomPositionX
+			) {
+				console.log(
+					`Hit, ProjectileX is ${projectilePositionX} and randomPositionX is ${randomPositionX}`
+				);
+
+				gameOver();
+			}
 		}
-		setInterval(() => {
-			if (projectilePosition > 0) moveProjectile();
+		projectileId = setInterval(() => {
+			if (projectilePositionY > 0) moveProjectile();
 		}, 10);
 	}
 
 	function inputHandler(event) {
-		// console.log(event);
 		switch (event.code) {
 			case "ArrowLeft":
 				if (playerLeft > 0) moveLeft();
 				break;
 			case "ArrowRight":
-				if (playerLeft <= 92) moveRight();
-				console.log(playerLeft);
+				if (playerLeft <= windowWidth - playerWidth) moveRight();
 				break;
 			case "Space":
 				shootProjectile();
@@ -56,16 +72,18 @@ document.addEventListener("DOMContentLoaded", () => {
 		}
 	}
 
-	function generateInvader(projectilePosition) {
-		let randomPositionX = Math.floor(Math.random() * (88 - 0 + 1) + 0);
-		// let randomPositionX = 88;
-		let randomPositionY = Math.floor(Math.random() * (100 - 0 + 1) + 0);
+	function generateInvader() {
+		randomPositionX = Math.floor(
+			Math.random() * (windowWidth - invaderWitdh - 0 + 1) + 0
+		);
+		// randomPositionX = windowWidth - invaderWitdh;
+		randomPositionY = Math.floor(Math.random() * (100 - 0 + 1) + 0);
 		invaderCounter++;
 		const invader = document.createElement("div");
 		invader.classList.add("invaders");
 		space.appendChild(invader);
 
-		invader.style.left = randomPositionX + "%";
+		invader.style.left = randomPositionX + "px";
 		invader.style.top = randomPositionY + "px";
 
 		// if (invaderCounter < 5) setTimeout(generateInvader, 4000);
@@ -73,7 +91,8 @@ document.addEventListener("DOMContentLoaded", () => {
 		function moveInvaderLeft() {
 			if (randomPositionX >= 0) {
 				randomPositionX -= invaderSpeed;
-				invader.style.left = randomPositionX + "%";
+				invader.style.left = randomPositionX + "px";
+				// console.log(randomPositionX);
 			} else {
 				reachedLeftSide = true;
 				randomPositionY += verticalSpeed;
@@ -81,9 +100,10 @@ document.addEventListener("DOMContentLoaded", () => {
 			}
 		}
 		function moveInvaderRight() {
-			if (randomPositionX <= 88) {
+			if (randomPositionX <= windowWidth - invaderWitdh) {
 				randomPositionX += invaderSpeed;
-				invader.style.left = randomPositionX + "%";
+				invader.style.left = randomPositionX + "px";
+				// console.log(randomPositionX);
 			} else {
 				reachedLeftSide = false;
 				randomPositionY += verticalSpeed;
@@ -92,17 +112,15 @@ document.addEventListener("DOMContentLoaded", () => {
 		}
 
 		//Crear 2 funciones de movimiento y correrlas dependiendo de si toco un borde u otro
-		let invaderId = setInterval(() => {
+		invaderId = setInterval(() => {
 			if (reachedLeftSide == true) {
 				if (randomPositionY > 310) {
-					clearInterval(invaderId);
 					gameOver();
 				} else {
 					moveInvaderRight();
 				}
 			} else if (reachedLeftSide == false) {
 				if (randomPositionY > 310) {
-					clearInterval(invaderId);
 					gameOver();
 				} else {
 					moveInvaderLeft();
@@ -112,9 +130,12 @@ document.addEventListener("DOMContentLoaded", () => {
 	}
 
 	function gameOver() {
+		clearInterval(invaderId);
+		if (isShooting == true) clearInterval(projectileId);
 		isGameOver = true;
 		document.removeEventListener("keydown", inputHandler);
 	}
 	document.addEventListener("keydown", inputHandler);
+
 	generateInvader();
 });

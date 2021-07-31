@@ -53,6 +53,6 @@
 	width: 90px;
 	height: 90px;
 	position: absolute;
-	transition: top 0.2s;
+	/* transition: top 0.2s; */
 	z-index: +2;
 }
