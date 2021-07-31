@@ -40,16 +40,14 @@ document.addEventListener("DOMContentLoaded", () => {
 			projectilePositionY -= projectileSpeed;
 			projectile.style.top = projectilePositionY + "px";
 			//Algoritmo de colision
+			if (projectilePositionY == 0) gameDisplay.removeChild(projectile);
 			if (
 				projectilePositionY < randomPositionY + invaderWitdh &&
 				projectilePositionY + 30 > randomPositionY &&
 				projectilePositionX < randomPositionX + invaderWitdh &&
 				projectilePositionX + projectileWidth > randomPositionX
 			) {
-				console.log(
-					`Hit, ProjectileX is ${projectilePositionX} and randomPositionX is ${randomPositionX}`
-				);
-
+				space.removeChild(invader);
 				gameOver();
 			}
 		}
@@ -79,7 +77,7 @@ document.addEventListener("DOMContentLoaded", () => {
 		// randomPositionX = windowWidth - invaderWitdh;
 		randomPositionY = Math.floor(Math.random() * (100 - 0 + 1) + 0);
 		invaderCounter++;
-		const invader = document.createElement("div");
+		invader = document.createElement("div");
 		invader.classList.add("invaders");
 		space.appendChild(invader);
 
