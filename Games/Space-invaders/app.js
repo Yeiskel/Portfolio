@@ -8,6 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
 	let playerWidth = 50;
 	let projectileSpeed = 5;
 	let projectileWidth = 15;
+	let projectileHeight = 30;
 	let isShooting = false;
 	let sideSpeed = 10;
 	let verticalSpeed = 90;
@@ -40,19 +41,20 @@ document.addEventListener("DOMContentLoaded", () => {
 			projectilePositionY -= projectileSpeed;
 			projectile.style.top = projectilePositionY + "px";
 			//Algoritmo de colision
-			if (projectilePositionY == 0) gameDisplay.removeChild(projectile);
 			if (
 				projectilePositionY < randomPositionY + invaderWitdh &&
-				projectilePositionY + 30 > randomPositionY &&
+				projectilePositionY + projectileHeight > randomPositionY &&
 				projectilePositionX < randomPositionX + invaderWitdh &&
 				projectilePositionX + projectileWidth > randomPositionX
 			) {
-				space.removeChild(invader);
 				gameOver();
+				space.removeChild(invader);
+				gameDisplay.removeChild(projectile);
 			}
+			if (projectilePositionY == -30) gameDisplay.removeChild(projectile);
 		}
 		projectileId = setInterval(() => {
-			if (projectilePositionY > 0) moveProjectile();
+			if (projectilePositionY > -30) moveProjectile();
 		}, 10);
 	}
 
