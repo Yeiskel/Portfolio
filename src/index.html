@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.0.17/dist/css/splide.min.css"
+		/>
+		<link href="/dist/output.css" rel="stylesheet" />
+
+		<title>Portfolio</title>
+	</head>
+	<body>
+		<!-- Navigation -->
+		<nav
+			class="border- fixed z-40 flex h-auto w-full bg-slate-800/40 py-2 backdrop-blur-[5px] transition-all duration-500"
+		>
+			<div class="mx-auto flex w-4/5 flex-row flex-wrap justify-between">
+				<div class="font-bold text-accent">YEISKEL</div>
+
+				<div class="invisible flex space-x-3 pl-2 md:visible">
+					<a
+						class="text-accent hover:underline focus:underline"
+						href="#about"
+						>ABOUT</a
+					>
+					<a
+						class="text-accent hover:underline focus:underline"
+						href="#projects"
+						>PROJECTS</a
+					>
+					<a
+						class="text-accent hover:underline focus:underline"
+						href="#contact"
+						>CONTACT</a
+					>
+					<a href="http://">
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							class="h-6 w-6 fill-accent transition-all duration-300 hover:h-7 hover:w-7"
+							viewBox="0 0 24 24"
+							fill="currentColor"
+						>
+							<path
+								fill-rule="evenodd"
+								clip-rule="evenodd"
+								d="M12.026 2c-5.509 0-9.974 4.465-9.974 9.974 0 4.406 2.857 8.145 6.821 9.465.499.09.679-.217.679-.481 0-.237-.008-.865-.011-1.696-2.775.602-3.361-1.338-3.361-1.338-.452-1.152-1.107-1.459-1.107-1.459-.905-.619.069-.605.069-.605 1.002.07 1.527 1.028 1.527 1.028.89 1.524 2.336 1.084 2.902.829.091-.645.351-1.085.635-1.334-2.214-.251-4.542-1.107-4.542-4.93 0-1.087.389-1.979 1.024-2.675-.101-.253-.446-1.268.099-2.64 0 0 .837-.269 2.742 1.021a9.582 9.582 0 0 1 2.496-.336 9.554 9.554 0 0 1 2.496.336c1.906-1.291 2.742-1.021 2.742-1.021.545 1.372.203 2.387.099 2.64.64.696 1.024 1.587 1.024 2.675 0 3.833-2.33 4.675-4.552 4.922.355.308.675.916.675 1.846 0 1.334-.012 2.41-.012 2.737 0 .267.178.577.687.479C19.146 20.115 22 16.379 22 11.974 22 6.465 17.535 2 12.026 2z"
+							></path>
+						</svg>
+					</a>
+					<a href="http://">
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							class="h-6 w-6 fill-accent transition-all duration-300 hover:h-7 hover:w-7"
+							viewBox="0 0 50 50"
+						>
+							<path
+								d="M25,2C12.3,2,2,12.3,2,25s10.3,23,23,23s23-10.3,23-23S37.7,2,25,2z M19,35c0,0.5-0.5,1-1,1h-4c-0.5,0-1-0.5-1-1V20 c0-0.5,0.5-1,1-1h4c0.5,0,1,0.5,1,1V35z M16,18c-1.6,0-3-1.4-3-3s1.4-3,3-3s3,1.4,3,3S17.6,18,16,18z M38,35c0,0.5-0.5,1-1,1h-4 c-0.5,0-1-0.5-1-1v-7.5c0-1.4-1.1-2.5-2.5-2.5S27,26.1,27,27.5V35c0,0.5-0.5,1-1,1h-4c-0.5,0-1-0.5-1-1V20c0-0.5,0.5-1,1-1h4 c0.5,0,1,0.4,1,1c1.1-0.6,2.2-1,3.5-1c4.1,0,7.5,3.4,7.5,7.5V35z"
+							></path>
+						</svg>
+					</a>
+				</div>
+
+				<div class="flex items-center md:hidden">
+					<button id="mobile-menu-button" class="outline-none">
+						<svg
+							class="h-6 w-6 stroke-accent text-gray-500"
+							x-show="!showMenu"
+							fill="none"
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							stroke-width="2"
+							viewBox="0 0 24 24"
+							stroke="currentColor"
+						>
+							<path d="M4 6h16M4 12h16M4 18h16"></path>
+						</svg>
+					</button>
+				</div>
+				<div id="mobile-menu" class="hidden flex-row space-x-3">
+					<a
+						class="text-accent hover:underline focus:underline"
+						href="#about"
+						>ABOUT</a
+					>
+					<a
+						class="text-accent hover:underline focus:underline"
+						href="#projects"
+						>PROJECTS</a
+					>
+					<a
+						class="text-accent hover:underline focus:underline"
+						href="#contact"
+						>CONTACT</a
+					>
+					<a href="http://">
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							class="h-6 w-6 fill-accent transition-all duration-300 hover:h-7 hover:w-7"
+							viewBox="0 0 24 24"
+							fill="currentColor"
+						>
+							<path
+								fill-rule="evenodd"
+								clip-rule="evenodd"
+								d="M12.026 2c-5.509 0-9.974 4.465-9.974 9.974 0 4.406 2.857 8.145 6.821 9.465.499.09.679-.217.679-.481 0-.237-.008-.865-.011-1.696-2.775.602-3.361-1.338-3.361-1.338-.452-1.152-1.107-1.459-1.107-1.459-.905-.619.069-.605.069-.605 1.002.07 1.527 1.028 1.527 1.028.89 1.524 2.336 1.084 2.902.829.091-.645.351-1.085.635-1.334-2.214-.251-4.542-1.107-4.542-4.93 0-1.087.389-1.979 1.024-2.675-.101-.253-.446-1.268.099-2.64 0 0 .837-.269 2.742 1.021a9.582 9.582 0 0 1 2.496-.336 9.554 9.554 0 0 1 2.496.336c1.906-1.291 2.742-1.021 2.742-1.021.545 1.372.203 2.387.099 2.64.64.696 1.024 1.587 1.024 2.675 0 3.833-2.33 4.675-4.552 4.922.355.308.675.916.675 1.846 0 1.334-.012 2.41-.012 2.737 0 .267.178.577.687.479C19.146 20.115 22 16.379 22 11.974 22 6.465 17.535 2 12.026 2z"
+							></path>
+						</svg>
+					</a>
+					<a href="http://">
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							class="h-6 w-6 fill-accent transition-all duration-300 hover:h-7 hover:w-7"
+							viewBox="0 0 50 50"
+						>
+							<path
+								d="M25,2C12.3,2,2,12.3,2,25s10.3,23,23,23s23-10.3,23-23S37.7,2,25,2z M19,35c0,0.5-0.5,1-1,1h-4c-0.5,0-1-0.5-1-1V20 c0-0.5,0.5-1,1-1h4c0.5,0,1,0.5,1,1V35z M16,18c-1.6,0-3-1.4-3-3s1.4-3,3-3s3,1.4,3,3S17.6,18,16,18z M38,35c0,0.5-0.5,1-1,1h-4 c-0.5,0-1-0.5-1-1v-7.5c0-1.4-1.1-2.5-2.5-2.5S27,26.1,27,27.5V35c0,0.5-0.5,1-1,1h-4c-0.5,0-1-0.5-1-1V20c0-0.5,0.5-1,1-1h4 c0.5,0,1,0.4,1,1c1.1-0.6,2.2-1,3.5-1c4.1,0,7.5,3.4,7.5,7.5V35z"
+							></path>
+						</svg>
+					</a>
+				</div>
+			</div>
+		</nav>
+		<main>
+			<!-- Information about me -->
+			<section
+				id="about"
+				class="flex h-screen w-full flex-col bg-main md:flex-row"
+			>
+				<div
+					class="h-[50vh] w-full bg-[url(/src/images/bg_1.png)] bg-cover bg-no-repeat md:h-screen md:w-1/2"
+				></div>
+				<div
+					class="flex h-[50vh] w-full flex-col justify-center p-16 md:h-screen md:w-1/2 md:pr-[7rem]"
+				>
+					<h2 class="text-lg font-semibold text-accent">ABOUT</h2>
+					<h1 class="py-4 text-3xl font-bold text-special">
+						Front-end developers
+					</h1>
+					<p class="text-base text-[#e0fe47c6]">
+						My name is Yeiskel Cisneros. I'm a young self-taught
+						software developer with interest in Front-end
+						development and game develpment. I've gain experience
+						through building projects using HTML, CSS, JavaScript,
+						React and Python.
+					</p>
+				</div>
+			</section>
+			<!-- Slide show of my projects -->
+			<section id="projects" class="splide w-full">
+				<div class="splide__arrows">
+					<button
+						class="splide__arrow splide__arrow--prev absolute left-[10%] top-[90%] bg-gray-400/30 focus:outline-transparent focus:ring-transparent lg:top-1/2 lg:left-5"
+					>
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							viewBox="0 0 512 512"
+							class="rotate-180"
+							style="enable-background: new 0 0 512 512"
+							xml:space="preserve"
+						>
+							<path
+								transform="rotate(-134.999 202.842 133.82)"
+								style="fill: #a5f2e5"
+								d="M117.018 70.117h171.645v127.404H117.018z"
+							/>
+							<path
+								d="M439.573 247.56 195.42 3.408a11.631 11.631 0 0 0-16.454 0L72.427 109.947c-4.544 4.544-4.544 11.911 0 16.453l129.6 129.6-129.6 129.6a11.635 11.635 0 0 0 0 16.452l106.539 106.539a11.596 11.596 0 0 0 8.228 3.408c2.977 0 5.955-1.135 8.228-3.408l59.582-59.581c4.544-4.544 4.544-11.909 0-16.453-4.544-4.542-11.909-4.544-16.453 0l-51.356 51.355-90.085-90.084 227.699-227.699 90.085 90.085-117.393 117.392c-4.544 4.544-4.544 11.911 0 16.453 4.544 4.544 11.909 4.542 16.454 0l125.62-125.618a11.635 11.635 0 0 0 3.407-8.226c0-.07-.009-.137-.011-.206a11.594 11.594 0 0 0-3.398-8.449zM187.194 28.087l121.374 121.374-90.086 90.085L97.107 118.174l90.087-90.087z"
+							/>
+							<path
+								style="fill: #62d9c7"
+								d="m297.499 373.606 117.393-117.392-90.085-90.085-227.7 227.697 90.085 90.085 51.356-51.355c4.542-4.544 11.909-4.544 16.453 0l42.498-42.498c-4.543-4.542-4.543-11.909 0-16.452z"
+							/>
+						</svg>
+					</button>
+
+					<button
+						class="splide__arrow splide__arrow--next absolute right-[10%] top-[90%] bg-gray-400/30 focus:outline-transparent focus:ring-transparent lg:top-1/2 lg:right-5"
+					>
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							viewBox="0 0 512 512"
+							style="enable-background: new 0 0 512 512"
+							xml:space="preserve"
+						>
+							<path
+								transform="rotate(-134.999 202.842 133.82)"
+								style="fill: #a5f2e5"
+								d="M117.018 70.117h171.645v127.404H117.018z"
+							/>
+							<path
+								d="M439.573 247.56 195.42 3.408a11.631 11.631 0 0 0-16.454 0L72.427 109.947c-4.544 4.544-4.544 11.911 0 16.453l129.6 129.6-129.6 129.6a11.635 11.635 0 0 0 0 16.452l106.539 106.539a11.596 11.596 0 0 0 8.228 3.408c2.977 0 5.955-1.135 8.228-3.408l59.582-59.581c4.544-4.544 4.544-11.909 0-16.453-4.544-4.542-11.909-4.544-16.453 0l-51.356 51.355-90.085-90.084 227.699-227.699 90.085 90.085-117.393 117.392c-4.544 4.544-4.544 11.911 0 16.453 4.544 4.544 11.909 4.542 16.454 0l125.62-125.618a11.635 11.635 0 0 0 3.407-8.226c0-.07-.009-.137-.011-.206a11.594 11.594 0 0 0-3.398-8.449zM187.194 28.087l121.374 121.374-90.086 90.085L97.107 118.174l90.087-90.087z"
+							/>
+							<path
+								style="fill: #62d9c7"
+								d="m297.499 373.606 117.393-117.392-90.085-90.085-227.7 227.697 90.085 90.085 51.356-51.355c4.542-4.544 11.909-4.544 16.453 0l42.498-42.498c-4.543-4.542-4.543-11.909 0-16.452z"
+							/>
+						</svg>
+					</button>
+				</div>
+				<div class="splide__track">
+					<ul class="splide__list">
+						<li
+							class="splide__slide group w-full bg-[url(/src/images/quizzical_bg.png)] bg-cover bg-center bg-no-repeat"
+						>
+							<a href="https://yeiskel-quizzical.netlify.app/">
+								<div
+									class="h-screen w-full bg-gradient-to-b from-transparent to-neutral-400/70"
+								>
+									<div
+										class="mx-auto flex h-screen w-4/5 flex-col justify-center pt-72"
+									>
+										<div
+											class="transition-transform duration-500 group-hover:-translate-y-full"
+										>
+											<h1 class="mb-4 text-4xl font-bold">
+												Quizzical
+											</h1>
+										</div>
+										<div
+											class="absolute bottom-[25vh] -translate-y-full overflow-hidden transition-transform duration-500 group-hover:translate-y-0"
+										>
+											<div
+												class="translate-y-full transition-transform duration-500 group-hover:translate-y-0"
+											>
+												<p
+													class="translate-y-full font-medium transition-transform duration-500 group-hover:translate-y-0"
+												>
+													A short quizz game with
+													categories for everyone and
+													random difficulty.
+												</p>
+											</div>
+										</div>
+										<div
+											class="flex gap-4 border-b border-black pb-2 text-sm transition-transform duration-500 group-hover:translate-y-[200%]"
+										>
+											<span class="font-semibold"
+												>HTML</span
+											>
+											<span class="font-semibold"
+												>CSS</span
+											>
+											<span class="font-semibold"
+												>JavaScript</span
+											>
+											<span class="font-semibold"
+												>React</span
+											>
+										</div>
+									</div>
+								</div>
+							</a>
+						</li>
+						<li
+							class="splide__slide group w-full bg-[url(/src/images/to-do.png)] bg-cover bg-center bg-no-repeat"
+						>
+							<a href="https://todo-stitch.netlify.app/">
+								<div
+									class="h-screen w-full bg-gradient-to-b from-transparent to-neutral-400/70"
+								>
+									<div
+										class="mx-auto flex h-screen w-4/5 flex-col justify-center pt-72"
+									>
+										<div
+											class="transition-transform duration-500 group-hover:-translate-y-full"
+										>
+											<h1 class="mb-4 text-4xl font-bold">
+												To-do list
+											</h1>
+										</div>
+										<div
+											class="absolute bottom-[25vh] -translate-y-full overflow-hidden transition-transform duration-500 group-hover:translate-y-0"
+										>
+											<div
+												class="translate-y-full transition-transform duration-500 group-hover:translate-y-0"
+											>
+												<p
+													class="translate-y-full font-medium transition-transform duration-500 group-hover:translate-y-0"
+												>
+													A simple to-do list with a
+													Stitch inspired theme.
+												</p>
+											</div>
+										</div>
+										<div
+											class="flex gap-4 border-b border-black pb-2 text-sm transition-transform duration-500 group-hover:translate-y-[200%]"
+										>
+											<span class="font-semibold"
+												>HTML</span
+											>
+											<span class="font-semibold"
+												>CSS</span
+											>
+											<span class="font-semibold"
+												>JavaScript</span
+											>
+											<span class="font-semibold"
+												>React</span
+											>
+											<span class="font-semibold"
+												>Tailwind</span
+											>
+										</div>
+									</div>
+								</div>
+							</a>
+						</li>
+						<li
+							class="splide__slide group w-full bg-[url(/src/images/xmas-candy-crush.png)] bg-cover bg-center bg-no-repeat"
+						>
+							<a href="https://xmas-candy-crush.netlify.app/">
+								<div
+									class="h-screen w-full bg-gradient-to-b from-transparent to-neutral-400/70"
+								>
+									<div
+										class="mx-auto flex h-screen w-4/5 flex-col justify-center pt-72"
+									>
+										<div
+											class="transition-transform duration-500 group-hover:-translate-y-full"
+										>
+											<h1 class="mb-4 text-4xl font-bold">
+												Christmas Candy Crush
+											</h1>
+										</div>
+										<div
+											class="absolute bottom-[25vh] -translate-y-full overflow-hidden transition-transform duration-500 group-hover:translate-y-0"
+										>
+											<div
+												class="translate-y-full transition-transform duration-500 group-hover:translate-y-0"
+											>
+												<p
+													class="translate-y-full font-medium transition-transform duration-500 group-hover:translate-y-0"
+												>
+													A simple candy crush clone
+													with a Christmas theme.
+												</p>
+											</div>
+										</div>
+										<div
+											class="flex gap-4 border-b border-black pb-2 text-sm transition-transform duration-500 group-hover:translate-y-[200%]"
+										>
+											<span class="font-semibold"
+												>HTML</span
+											>
+											<span class="font-semibold"
+												>CSS</span
+											>
+											<span class="font-semibold"
+												>JavaScript</span
+											>
+											<span class="font-semibold"
+												>React</span
+											>
+										</div>
+									</div>
+								</div>
+							</a>
+						</li>
+						<li
+							class="splide__slide group w-full bg-purple-600 bg-cover bg-center bg-no-repeat"
+						>
+							<a href="https://xmas-candy-crush.netlify.app/">
+								<div
+									class="h-screen w-full bg-gradient-to-b from-transparent to-neutral-400/70"
+								>
+									<div
+										class="mx-auto flex h-screen w-4/5 flex-col justify-center pt-72"
+									>
+										<div
+											class="transition-transform duration-500 group-hover:-translate-y-full"
+										>
+											<h1 class="mb-4 text-4xl font-bold">
+												Coming soon
+											</h1>
+										</div>
+										<div
+											class="absolute bottom-[25vh] -translate-y-full overflow-hidden transition-transform duration-500 group-hover:translate-y-0"
+										>
+											<div
+												class="translate-y-full transition-transform duration-500 group-hover:translate-y-0"
+											>
+												<p
+													class="translate-y-full font-medium transition-transform duration-500 group-hover:translate-y-0"
+												>
+													A project in the making
+												</p>
+											</div>
+										</div>
+										<div
+											class="flex gap-4 border-b border-black pb-2 text-sm transition-transform duration-500 group-hover:translate-y-[200%]"
+										>
+											<span class="font-semibold"
+												>HTML</span
+											>
+											<span class="font-semibold"
+												>CSS</span
+											>
+											<span class="font-semibold"
+												>JavaScript</span
+											>
+										</div>
+									</div>
+								</div>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</section>
+			<!-- CONTACT INFO -->
+			<section
+				id="contact"
+				class="flex h-screen w-full flex-col justify-between bg-main md:flex-row"
+			>
+				<div
+					class="flex h-[50vh] w-full flex-col justify-end px-16 pb-16 md:h-screen md:w-1/2 md:justify-center md:p-16"
+				>
+					<h2 class="text-lg font-semibold text-accent">CONTACT</h2>
+					<h1 class="py-4 text-3xl font-bold text-special">
+						Do you want to reach out to me?
+					</h1>
+					<a
+						href="mailto:yeiskelcisneros@gmail.com"
+						class="inline-block font-semibold text-special"
+						><?xml version="1.0" encoding="UTF-8"?><svg
+							width="24px"
+							height="24px"
+							class="mr-2 inline-block stroke-cyan-500"
+							stroke-width="2.5"
+							viewBox="0 0 24 24"
+							fill="none"
+							xmlns="http://www.w3.org/2000/svg"
+						>
+							<path
+								d="M7 9l5 3.5L17 9"
+								stroke-width="2.5"
+								stroke-linecap="round"
+								stroke-linejoin="round"
+							></path>
+							<path
+								d="M2 17V7a2 2 0 012-2h16a2 2 0 012 2v10a2 2 0 01-2 2H4a2 2 0 01-2-2z"
+								stroke-width="2.5"
+							></path>
+						</svg>
+						yeiskelcisneros@gmail.com</a
+					>
+				</div>
+				<div
+					class="mx-auto flex h-[50vh] w-full flex-col justify-start px-16 pb-16 md:h-screen md:w-1/2 md:justify-center md:p-16"
+				>
+					<form
+						action="https://formsubmit.co/yeiskelcisneros@gmail.com"
+						method="POST"
+					>
+						<div class="flex flex-col space-y-3 pr-4">
+							<label for="name" class="text-special">NAME</label>
+
+							<input
+								type="text"
+								name="name"
+								maxlength="40"
+								class="pl4 rounded border-2 border-accent bg-[#1b6e81c1] bg-[url(/src/images/profile-circled.svg)] bg-left bg-no-repeat bg-origin-content p-2 indent-8 focus:border-special"
+								required
+							/>
+							<label for="email" class="text-special"
+								>EMAIL</label
+							>
+
+							<input
+								type="email"
+								name="email"
+								maxlength="40"
+								class="pl4 rounded border-2 border-accent bg-[#1b6e81c1] bg-[url(/src/images/mail.svg)] bg-left bg-no-repeat bg-origin-content p-2 indent-8"
+								required
+							/>
+							<label for="message" class="text-special"
+								>MESSAGE</label
+							>
+
+							<textarea
+								name="message"
+								class="rounded border-2 border-accent bg-[#1b6e81c1] p-2"
+								rows="4"
+							></textarea>
+							<input
+								type="hidden"
+								name="_captcha"
+								value="false"
+							/>
+							<button
+								id="form_btn"
+								type="submit"
+								class="w-35 inline-block self-start rounded bg-special px-5 py-2 hover:animate-pulse"
+							>
+								<svg
+									width="24px"
+									height="24px"
+									class="mr-2 inline-block"
+									viewBox="0 0 24 24"
+									stroke-width="1.5"
+									fill="none"
+									xmlns="http://www.w3.org/2000/svg"
+									color="#000000"
+								>
+									<path
+										d="M9 9l4.5 3L18 9M3 13.5h2M1 10.5h4"
+										stroke="#000000"
+										stroke-width="1.5"
+										stroke-linecap="round"
+										stroke-linejoin="round"
+									></path>
+									<path
+										d="M5 7.5V7a2 2 0 012-2h13a2 2 0 012 2v10a2 2 0 01-2 2H7a2 2 0 01-2-2v-.5"
+										stroke="#000000"
+										stroke-width="1.5"
+										stroke-linecap="round"
+									></path>
+								</svg>
+								Send
+							</button>
+						</div>
+					</form>
+				</div>
+			</section>
+			<!-- SOURCE CODE -->
+			<section
+				id="source-code"
+				class="flex h-screen w-full flex-col bg-special md:flex-row"
+			>
+				<div
+					class="h-[50vh] w-full bg-[url(/src/images/bg_2.jpg)] bg-cover bg-no-repeat md:h-screen md:w-1/2"
+				></div>
+				<div
+					class="mx-auto flex h-[50vh] flex-col justify-center p-16 md:h-screen md:w-1/2 md:pr-[7rem]"
+				>
+					<h2 class="text-lg font-semibold text-[#0BC4CF]">
+						Wanna know how I did it?
+					</h2>
+					<h1 class="py-4 text-3xl font-bold text-main">
+						Behind the scenes
+					</h1>
+					<p class="text-base text-[#04343f]">
+						Do you wish to take a peak at my code? Feel free to go
+						through the source code here.
+					</p>
+
+					<a class="mt-8 self-center" href="http://"
+						><svg
+							xmlns="http://www.w3.org/2000/svg"
+							width="100"
+							height="100"
+							class="animate-bounce fill-accent transition-all duration-300"
+							viewBox="0 0 24 24"
+							fill="currentColor"
+						>
+							<path
+								fill-rule="evenodd"
+								clip-rule="evenodd"
+								d="M12.026 2c-5.509 0-9.974 4.465-9.974 9.974 0 4.406 2.857 8.145 6.821 9.465.499.09.679-.217.679-.481 0-.237-.008-.865-.011-1.696-2.775.602-3.361-1.338-3.361-1.338-.452-1.152-1.107-1.459-1.107-1.459-.905-.619.069-.605.069-.605 1.002.07 1.527 1.028 1.527 1.028.89 1.524 2.336 1.084 2.902.829.091-.645.351-1.085.635-1.334-2.214-.251-4.542-1.107-4.542-4.93 0-1.087.389-1.979 1.024-2.675-.101-.253-.446-1.268.099-2.64 0 0 .837-.269 2.742 1.021a9.582 9.582 0 0 1 2.496-.336 9.554 9.554 0 0 1 2.496.336c1.906-1.291 2.742-1.021 2.742-1.021.545 1.372.203 2.387.099 2.64.64.696 1.024 1.587 1.024 2.675 0 3.833-2.33 4.675-4.552 4.922.355.308.675.916.675 1.846 0 1.334-.012 2.41-.012 2.737 0 .267.178.577.687.479C19.146 20.115 22 16.379 22 11.974 22 6.465 17.535 2 12.026 2z"
+							></path>
+						</svg>
+					</a>
+				</div>
+			</section>
+		</main>
+		<!-- FOOTER -->
+		<footer>
+			<div class="w-full bg-main py-28">
+				<div class="mx-auto w-4/5">
+					<div
+						class="flex flex-row justify-center gap-5 border-y-2 border-accent py-8"
+					>
+						<a
+							class="text-accent hover:underline focus:underline"
+							href="#about"
+							>ABOUT</a
+						>
+						<a
+							class="text-accent hover:underline focus:underline"
+							href="#projects"
+							>PROJECTS</a
+						>
+						<a
+							class="text-accent hover:underline focus:underline"
+							href="#contact"
+							>CONTACT</a
+						>
+						<a
+							class="text-accent hover:underline focus:underline"
+							href="#source-code"
+							>SOURCE CODE</a
+						>
+					</div>
+					<div class="flex flex-row justify-center gap-4 pt-10">
+						<a href="http://">
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								width="32"
+								height="32"
+								class="h-8 w-8 fill-accent transition-all duration-300 hover:h-9 hover:w-9"
+								viewBox="0 0 24 24"
+							>
+								<path
+									fill-rule="evenodd"
+									clip-rule="evenodd"
+									d="M12.026 2c-5.509 0-9.974 4.465-9.974 9.974 0 4.406 2.857 8.145 6.821 9.465.499.09.679-.217.679-.481 0-.237-.008-.865-.011-1.696-2.775.602-3.361-1.338-3.361-1.338-.452-1.152-1.107-1.459-1.107-1.459-.905-.619.069-.605.069-.605 1.002.07 1.527 1.028 1.527 1.028.89 1.524 2.336 1.084 2.902.829.091-.645.351-1.085.635-1.334-2.214-.251-4.542-1.107-4.542-4.93 0-1.087.389-1.979 1.024-2.675-.101-.253-.446-1.268.099-2.64 0 0 .837-.269 2.742 1.021a9.582 9.582 0 0 1 2.496-.336 9.554 9.554 0 0 1 2.496.336c1.906-1.291 2.742-1.021 2.742-1.021.545 1.372.203 2.387.099 2.64.64.696 1.024 1.587 1.024 2.675 0 3.833-2.33 4.675-4.552 4.922.355.308.675.916.675 1.846 0 1.334-.012 2.41-.012 2.737 0 .267.178.577.687.479C19.146 20.115 22 16.379 22 11.974 22 6.465 17.535 2 12.026 2z"
+								></path>
+							</svg>
+						</a>
+						<a href="http://">
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								x="0px"
+								y="0px"
+								width="32"
+								height="32"
+								class="h-8 w-8 fill-accent transition-all duration-300 hover:h-9 hover:w-9"
+								viewBox="0 0 50 50"
+							>
+								<path
+									d="M25,2C12.3,2,2,12.3,2,25s10.3,23,23,23s23-10.3,23-23S37.7,2,25,2z M19,35c0,0.5-0.5,1-1,1h-4c-0.5,0-1-0.5-1-1V20 c0-0.5,0.5-1,1-1h4c0.5,0,1,0.5,1,1V35z M16,18c-1.6,0-3-1.4-3-3s1.4-3,3-3s3,1.4,3,3S17.6,18,16,18z M38,35c0,0.5-0.5,1-1,1h-4 c-0.5,0-1-0.5-1-1v-7.5c0-1.4-1.1-2.5-2.5-2.5S27,26.1,27,27.5V35c0,0.5-0.5,1-1,1h-4c-0.5,0-1-0.5-1-1V20c0-0.5,0.5-1,1-1h4 c0.5,0,1,0.4,1,1c1.1-0.6,2.2-1,3.5-1c4.1,0,7.5,3.4,7.5,7.5V35z"
+								></path>
+							</svg>
+						</a>
+					</div>
+				</div>
+			</div>
+		</footer>
+		<script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.0.17/dist/js/splide.min.js"></script>
+		<script type="text/javascript" src="./index.js"></script>
+	</body>
+</html>
