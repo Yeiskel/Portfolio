@@ -818,36 +818,36 @@ video {
   background-color: rgb(233 237 2 / var(--tw-bg-opacity));
 }
 
-.bg-\[url\(\/src\/images\/bg_1\.png\)\] {
-  background-image: url(/src/images/bg_1.png);
+.bg-\[url\(\'\.\/src\/images\/bg_1\.png\'\)\] {
+  background-image: url('./src/images/bg_1.png');
 }
 
-.bg-\[url\(\/src\/images\/quizzical_bg\.png\)\] {
-  background-image: url(/src/images/quizzical_bg.png);
+.bg-\[url\(\.\/src\/images\/quizzical_bg\.png\)\] {
+  background-image: url(./src/images/quizzical_bg.png);
 }
 
 .bg-gradient-to-b {
   background-image: linear-gradient(to bottom, var(--tw-gradient-stops));
 }
 
-.bg-\[url\(\/src\/images\/profile-circled\.svg\)\] {
-  background-image: url(/src/images/profile-circled.svg);
+.bg-\[url\(\.\/src\/images\/to-do\.png\)\] {
+  background-image: url(./src/images/to-do.png);
 }
 
-.bg-\[url\(\/src\/images\/mail\.svg\)\] {
-  background-image: url(/src/images/mail.svg);
+.bg-\[url\(\.\/src\/images\/xmas-candy-crush\.png\)\] {
+  background-image: url(./src/images/xmas-candy-crush.png);
 }
 
-.bg-\[url\(\/src\/images\/bg_2\.jpg\)\] {
-  background-image: url(/src/images/bg_2.jpg);
+.bg-\[url\(\.\/src\/images\/profile-circled\.svg\)\] {
+  background-image: url(./src/images/profile-circled.svg);
 }
 
-.bg-\[url\(\/src\/images\/xmas-candy-crush\.png\)\] {
-  background-image: url(/src/images/xmas-candy-crush.png);
+.bg-\[url\(\.\/src\/images\/mail\.svg\)\] {
+  background-image: url(./src/images/mail.svg);
 }
 
-.bg-\[url\(\/src\/images\/to-do\.png\)\] {
-  background-image: url(/src/images/to-do.png);
+.bg-\[url\(\.\/src\/images\/bg_2\.jpg\)\] {
+  background-image: url(./src/images/bg_2.jpg);
 }
 
 .from-transparent {
