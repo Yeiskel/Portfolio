@@ -850,6 +850,38 @@ video {
   background-image: url(./src/images/bg_2.jpg);
 }
 
+.bg-\[url\(src\/images\/xmas-candy-crush\.png\)\] {
+  background-image: url(src/images/xmas-candy-crush.png);
+}
+
+.bg-\[url\(\.\.\/src\/images\/xmas-candy-crush\.png\)\] {
+  background-image: url(../src/images/xmas-candy-crush.png);
+}
+
+.bg-\[url\(\.\.\/src\/images\/to-do\.png\)\] {
+  background-image: url(../src/images/to-do.png);
+}
+
+.bg-\[url\(\.\.\/src\/images\/quizzical_bg\.png\)\] {
+  background-image: url(../src/images/quizzical_bg.png);
+}
+
+.bg-\[url\(\'\.\.\/src\/images\/bg_1\.png\'\)\] {
+  background-image: url('../src/images/bg_1.png');
+}
+
+.bg-\[url\(\.\.\/src\/images\/bg_2\.jpg\)\] {
+  background-image: url(../src/images/bg_2.jpg);
+}
+
+.bg-\[url\(\.\.\/src\/images\/profile-circled\.svg\)\] {
+  background-image: url(../src/images/profile-circled.svg);
+}
+
+.bg-\[url\(\.\.\/src\/images\/mail\.svg\)\] {
+  background-image: url(../src/images/mail.svg);
+}
+
 .from-transparent {
   --tw-gradient-from: transparent;
   --tw-gradient-to: rgb(0 0 0 / 0);
